@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Three.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.min.js"></script>
+</head>
+
+<body>
+  <div id="scrollBar"></div>
+  <canvas id="bgCanvas"></canvas>
+  <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand logo d-flex align-items-center gap-2" href="#home">
+        <img src="images/logo.svg" alt="MB Logo"
+          style="height: 38px; width: 38px; filter: drop-shadow(0 0 4px var(--pink));" />
+        <span
+          style="font-family:'JetBrains Mono',monospace; font-weight:800; font-size: 20px; color:var(--text);">Mani<span
+            style="color:var(--cyan)">kandan</span></span>
+      </a>
+      <div class="d-flex align-items-center order-lg-last gap-2">
+        <!-- Light/Dark Mode Switcher Toggle Button -->
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme System">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+          aria-label="Toggle Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+          <li class="nav-item"><a class="nav-link" href="#study-journey">Study Journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="#puzzle-game">Game</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal-left">
+            <span class="intro-badge">👋 Welcome to my Portfolio</span>
+            <h1 class="big-title">Hi, I'm Manikandan B</h1>
+            <div class="typing-line">&gt; <span id="typing"></span><span class="cursor"
+                style="color:var(--pink)">|</span></div>
+            <p class="hero-desc">Aspiring Software Developer with hands-on experience building web applications using
+              HTML, CSS, JavaScript, PHP, and MySQL. Eager to learn, adapt quickly, and contribute to real-world
+              software development as a fresher. Based out of Madurai, Tamil Nadu.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="Manikandan Resume.pdf" class="btn-primary-glow" download>
+                <i class="fas fa-download"></i> View Resume
+              </a>
+              <a href="#contact" class="btn-outline-glow">
+                <i class="fas fa-paper-plane"></i> Initialize Connection
+              </a>
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/spiderboy-Manikandan" target="_blank" rel="noreferrer"
+                class="social-link gh"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/manikandan-b-968bab348" target="_blank" rel="noreferrer"
+                class="social-link li"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/917094964875" target="_blank" rel="noreferrer"
+                class="social-link wa"><i class="fab fa-whatsapp"></i></a>
+              <a href="mailto:compmanikandanb23@gmail.com" class="social-link gm"><i class="fas fa-envelope"></i></a>
+              <a href="https://www.instagram.com/__itz_mani__66" target="_blank" rel="noreferrer"
+                class="social-link ig"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center reveal-right">
+            <div class="profile-shell-3d">
+              <div class="scene-3d">
+                <!-- Wooden Table Surface -->
+                <div class="desk-surface-3d"></div>
+                <!-- Keyboard -->
+                <div class="keyboard-3d">
+                  <div class="keyboard-keys-glow"></div>
+                </div>
+                <!-- Mouse -->
+                <div class="mouse-3d"></div>
+                <!-- CPU Tower with glowing spinning fans -->
+                <div class="cpu-3d">
+                  <div class="cpu-side-glass">
+                    <div class="cpu-fan-glow"></div>
+                    <div class="cpu-fan-glow pink"></div>
+                  </div>
+                </div>
+                <!-- Monitor Screen with standing base -->
+                <div class="monitor-3d">
+                  <div class="monitor-stand-3d"></div>
+                  <div class="monitor-base-3d"></div>
+                  <div class="monitor-screen-3d">
+                    <div class="screen-code">
+                      <div class="screen-code-lines">
+                        <div>&gt; Welcome to My Portfolio</div>
+                        <div>Featured: Projects • Games • Certificates</div>
+                        <div>Use the nav to explore sections</div>
+                      </div>
+                      <a href="#home" class="monitor-cta" aria-label="View portfolio">View Portfolio</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Hologram Profile Frame -->
+                <div class="hologram-profile-frame">
+                  <div class="hologram-ring"></div>
+                  <div class="hologram-ring-2"></div>
+                  <div class="hologram-photo-box">
+                    <img src="profile image.png" alt="Manikandan B" />
+                  </div>
+                  <div class="hologram-beam"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="alt-bg">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="section-badge">01 — Context</div>
+          <h2>About Me</h2>
+          <p>Compiling logic to resolve abstract problems</p>
+        </div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal-left">
+            <div class="about-highlight-box">
+              <i class="fas fa-terminal"></i>
+              <h4 style="font-size:22px;margin-bottom:12px;">Turning Ideas Into Reality</h4>
+              <p style="color:var(--muted);line-height:1.8;">I design structured database modules, clean modern
+                front-ends, and robust firmware wrappers.</p>
+            </div>
+            <div class="stat-grid mt-4">
+              <div class="stat-box">
+                <div class="num">9.4</div>
+                <p>CGPA / 10</p>
+              </div>
+              <div class="stat-box">
+                <div class="num">3+</div>
+                <p>Core Projects</p>
+              </div>
+              <div class="stat-box">
+                <div class="num">7+</div>
+                <p>Certifications</p>
+              </div>
+              <div class="stat-box">
+                <div class="num">2026</div>
+                <p>Graduation</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 reveal-right">
+            <h3 style="font-size:36px;font-weight:800;margin-bottom:10px;">Hi, I'm <span
+                style="color:var(--cyan)">Manikandan</span></h3>
+            <p style="color:var(--muted);line-height:1.9;font-size:16px;">
+              I am a Diploma in Computer Science & Engineering student from Madurai, Tamil Nadu, with a strong interest
+              in Software Development and Full-Stack Web Development. I enjoy learning new technologies and building
+              practical projects. Continuous improvement of technical logic sets my development standard.
+            </p>
+            <ul class="check-list">
+              <li><i class="fas fa-check-circle"></i> Engineering responsive frontend interfaces alongside secure logic.
+              </li>
+              <li><i class="fas fa-check-circle"></i> Building native hardware sync with public Google APIs.</li>
+              <li><i class="fas fa-check-circle"></i> Actively processing real-time tracking structures for social
+                impact applications.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="section-badge">02 — Timeline</div>
+          <h2>Education</h2>
+          <p>Academic milestones, school records, and specialized learning tracks</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 reveal">
+            <div class="timeline">
+              <div class="tl-item animated-tl-item">
+                <div class="tl-dot dynamic-glow-dot"></div>
+                <div class="tl-year">2023 – 2026</div>
+                <div class="tl-content-card">
+                  <h4>Diploma in Computer Science & Engineering (DCSE)</h4>
+                  <p class="mb-2">Tamil Nadu Government Polytechnic College, Madurai (Institution Code: 116)</p>
+                  <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="cgpa-badge">Current CGPA: 9.4 / 10</span>
+                    <span class="scholar-badge"><i class="fas fa-award"></i> Student of the Year 2023 - 2026</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tl-item animated-tl-item">
+                <div class="tl-dot dynamic-glow-dot"></div>
+                <div class="tl-year">2022 – 2023</div>
+                <div class="tl-content-card">
+                  <h4>SSLC (10th Standard)</h4>
+                  <p class="mb-2">Dhanapaul Higher Secondary School, Madurai, Tamil Nadu</p>
+                  <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="cgpa-badge"
+                      style="background: linear-gradient(90deg, var(--purple), var(--pink)); color: #fff;">Mark
+                      percentage: 77%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="alt-bg">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="section-badge">03 — Stack</div>
+          <h2>Skills</h2>
+          <p>Languages, developer toolkits, hardware environments and AI tools</p>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="skills-tabs-container reveal">
+          <button class="skills-tab-btn active" onclick="switchSkillTab('languages', this)">Languages</button>
+          <button class="skills-tab-btn" onclick="switchSkillTab('toolkits', this)">Developer Toolkits</button>
+          <button class="skills-tab-btn" onclick="switchSkillTab('hardware', this)">Hardware Environments</button>
+          <button class="skills-tab-btn" onclick="switchSkillTab('ai', this)">AI Tools</button>
+        </div>
+
+        <!-- Languages Grid -->
+        <div id="skills-languages" class="skill-grid-wrap active">
+          <div class="skill-grid">
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-html5" style="color:#e34f26"></i></div><span>HTML</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-css3-alt" style="color:#1572b6"></i></div><span>CSS</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-js" style="color:#f7df1e"></i></div><span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-php" style="color:#777bb4"></i></div><span>PHP</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-python" style="color:#3776ab"></i></div><span>Python</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-java" style="color:#ed8b00"></i></div><span>Java</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-code" style="color:#a8b2d8"></i></div><span>C Code</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-brain" style="color:#ff6b6b"></i></div>
+              <span>Machine Learning</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-chart-line" style="color:#4caf50"></i></div>
+              <span>Data Science</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toolkits Grid -->
+        <div id="skills-toolkits" class="skill-grid-wrap">
+          <div class="skill-grid">
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-database" style="color:#00758f"></i></div><span>MySQL</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-github" style="color:var(--github-icon)"></i></div><span>GitHub Control</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-google" style="color:#4285f4"></i></div><span>Sheets API</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-microsoft" style="color:#4285f4"></i></div><span>MS Office</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hardware Grid -->
+        <div id="skills-hardware" class="skill-grid-wrap">
+          <div class="skill-grid">
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-microchip" style="color:#00e5ff"></i></div><span>Arduino IDE</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-network-wired" style="color:#00d4ff"></i></div><span>Cisco</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-globe" style="color:#ff6b35"></i></div><span>Computer Network</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-desktop" style="color:#0ff175"></i></div><span>System Hardware</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Tools -->
+        <div id="skills-ai" class="skill-grid-wrap">
+          <div class="skill-grid">
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-robot" style="color:#10a37f"></i></div>
+              <span>ChatGPT</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-star" style="color:#4285F4"></i></div>
+              <span>Gemini</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fas fa-magnifying-glass" style="color:#2962FF"></i></div>
+              <span>DeepSeek</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-github" style="color:#ffffff"></i></div>
+              <span>GitHub Copilot</span>
+            </div>
+            <div class="skill-item">
+              <div class="si"><i class="fab fa-brain" style="color:#ffffff"></i></div>
+              <span>claude</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="alt-bg">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="section-badge">04 — Showcases</div>
+          <h2>Operational Projects</h2>
+          <p>Production applications engineered from scratch</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="project-card">
+              <!-- Carousel -->
+              <div class="carousel-container-3d" id="carousel-bus">
+                <div class="carousel-slider-3d">
+                  <div class="carousel-slide-3d"><img src="images/bus1.png" alt="Bus reservation dashboard" /></div>
+                  <div class="carousel-slide-3d"><img src="images/bus2.png" alt="Bus reservation ticketing screen" />
+                  </div>
+                </div>
+                <button class="carousel-btn-3d prev" onclick="slideCarousel('carousel-bus', -1)"><i
+                    class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn-3d next" onclick="slideCarousel('carousel-bus', 1)"><i
+                    class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots-3d">
+                  <div class="carousel-dot-3d active" onclick="setCarouselSlide('carousel-bus', 0)"></div>
+                  <div class="carousel-dot-3d" onclick="setCarouselSlide('carousel-bus', 1)"></div>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="proj-icon">🚌</div>
+                <h4 style="font-size:20px;font-weight:800;">Online Bus Ticket Reservation</h4>
+                <p style="color:var(--muted);font-size:14px;">A full-stack web application deploying authentication
+                  logic and session validation structures.</p>
+                <div class="proj-tags"><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span
+                    class="proj-tag">JavaScript</span></div>
+                <div class="proj-details" id="p1">
+                  <ul>
+                    <li>Real-time database allocation matrices</li>
+                    <li>Secure registration hashes and custom session storage</li>
+                  </ul>
+                  <div class="proj-links"><a href="https://github.com/spiderboy-Manikandan" target="_blank"
+                      rel="noreferrer" class="proj-link gh"><i class="fab fa-github"></i> Source</a></div>
+                </div>
+                <button class="toggle-btn" onclick="toggleProj('p1',this)"><i class="fas fa-eye"></i> View
+                  Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal" style="transition-delay:0.1s">
+            <div class="project-card">
+              <!-- Carousel -->
+              <div class="carousel-container-3d" id="carousel-rfid">
+                <div class="carousel-slider-3d">
+                  <div class="carousel-slide-3d"><img src="images/rfid2.png" alt="RFID live tracking logs" /></div>
+                  <div class="carousel-slide-3d"><img src="images/rfid1.png" alt="RFID Arduino system setup" /></div>
+                </div>
+                <button class="carousel-btn-3d prev" onclick="slideCarousel('carousel-rfid', -1)"><i
+                    class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn-3d next" onclick="slideCarousel('carousel-rfid', 1)"><i
+                    class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots-3d">
+                  <div class="carousel-dot-3d active" onclick="setCarouselSlide('carousel-rfid', 0)"></div>
+                  <div class="carousel-dot-3d" onclick="setCarouselSlide('carousel-rfid', 1)"></div>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="proj-icon">📡</div>
+                <h4 style="font-size:20px;font-weight:800;">RFID Lab Attendance Matrix</h4>
+                <p style="color:var(--muted);font-size:14px;">An automated physical tracking system pulling hardware
+                  layer scanner records straight into cloud storage wrappers.</p>
+                <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Google Sheets
+                    API</span><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span
+                    class="proj-tag">JavaScript</span></div>
+                <div class="proj-details" id="p2">
+                  <ul>
+                    <li>Serial port listener mapping automated scans</li>
+                    <li>Asynchronous data pipeline updating remote spreadsheets</li>
+                  </ul>
+                  <div class="proj-links"><a href="https://github.com/spiderboy-Manikandan" target="_blank"
+                      rel="noreferrer" class="proj-link gh"><i class="fab fa-github"></i> Source</a></div>
+                </div>
+                <button class="toggle-btn" onclick="toggleProj('p2',this)"><i class="fas fa-eye"></i> View
+                  Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal" style="transition-delay:0.2s">
+            <div class="project-card">
+              <!-- Carousel -->
+              <div class="carousel-container-3d" id="carousel-food">
+                <div class="carousel-slider-3d">
+                  <div class="carousel-slide-3d"><img src="images/food1.png" alt="Food waste tracking dashboard" />
+                  </div>
+                  <div class="carousel-slide-3d"><img src="images/food1.png" alt="Alternate view of food map"
+                      style="filter: hue-rotate(60deg) saturate(1.2);" /></div>
+                </div>
+                <button class="carousel-btn-3d prev" onclick="slideCarousel('carousel-food', -1)"><i
+                    class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn-3d next" onclick="slideCarousel('carousel-food', 1)"><i
+                    class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots-3d">
+                  <div class="carousel-dot-3d active" onclick="setCarouselSlide('carousel-food', 0)"></div>
+                  <div class="carousel-dot-3d" onclick="setCarouselSlide('carousel-food', 1)"></div>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="proj-icon">🍱</div>
+                <h4 style="font-size:20px;font-weight:800;">Food Redistribution System</h4>
+                <p style="color:var(--muted);font-size:14px;">A multi-tier dashboard connecting food donors, NGOs, and
+                  volunteers with live surplus data logs.</p>
+                <div class="proj-tags"><span class="proj-tag">Web Development</span><span class="proj-tag">Social
+                    Impact</span></div>
+                <div class="proj-details" id="p3">
+                  <ul>
+                    <li>Developed a scalable web platform to minimize global food wastage metrics.</li>
+                    <li>Implemented a real-time tracking architecture for surplus inventory collections.</li>
+                  </ul>
+                  <div class="proj-links"><a
+                      href="Food Redistribution System to Reduce Urban Food Waste and Hunger (1).pdf" target="_blank"
+                      class="proj-link gh"><i class="fab fa-file-pdf"></i> Project PDF</a></div>
+                </div>
+                <button class="toggle-btn" onclick="toggleProj('p3',this)"><i class="fas fa-eye"></i> View
+                  Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal" style="transition-delay:0.3s">
+            <div class="project-card">
+              <!-- Carousel -->
+              <div class="carousel-container-3d" id="carousel-portfolio">
+                <div class="carousel-slider-3d">
+                  <div class="carousel-slide-3d"><img src="images/games1.png" alt="Portfolio games feature" /></div>
+                  <div class="carousel-slide-3d"><img src="images/games1.png" alt="Portfolio website showcase"
+                      style="filter: brightness(1.1) contrast(1.1);" /></div>
+                </div>
+                <button class="carousel-btn-3d prev" onclick="slideCarousel('carousel-portfolio', -1)"><i
+                    class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn-3d next" onclick="slideCarousel('carousel-portfolio', 1)"><i
+                    class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots-3d">
+                  <div class="carousel-dot-3d active" onclick="setCarouselSlide('carousel-portfolio', 0)"></div>
+                  <div class="carousel-dot-3d" onclick="setCarouselSlide('carousel-portfolio', 1)"></div>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="proj-icon">💻</div>
+                <h4 style="font-size:20px;font-weight:800;">Personal Portfolio Website</h4>
+                <p style="color:var(--muted);font-size:14px;">A fully responsive portfolio website with 3D animations, dark/light mode, interactive games, and contact form integration.</p>
+                <div class="proj-tags"><span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">JavaScript</span></div>
+                <div class="proj-details" id="p4">
+                  <ul>
+                    <li>3D animated desktop environment with keyboard, mouse, and monitor</li>
+                    <li>Dark/Light mode theme switcher with localStorage persistence</li>
+                    <li>Integrated game section (Memory, Number Guessing, Tic-Tac-Toe AI)</li>
+                    <li>Scroll animations and smooth page navigation</li>
+                    <li>Formspree email integration for contact forms</li>
+                  </ul>
+                  <div class="proj-links"><a href="https://github.com/spiderboy-Manikandan" target="_blank"
+                      rel="noreferrer" class="proj-link gh"><i class="fab fa-github"></i> Source Code</a></div>
+                </div>
+                <div class="proj-links"><a href="index.html" target="_blank"
+                      rel="noreferrer" class="proj-link gh"><i class="fab fa-file-pdf"></i> View Portfolio</a></div>
+                </div>
+                <button class="toggle-btn" onclick="toggleProj('p4',this)"><i class="fas fa-eye"></i> View
+                  Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="certificates" class="alt-bg">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="section-badge">05 — Credentials</div>
+          <h2>Certificates</h2>
+          <p>Selected certifications and achievement proofs</p>
+        </div>
+        <div class="certificate-list">
+          <article class="certificate-card-item reveal">
+            <div class="certificate-card-media">
+              <img src="images/cert-html.png" alt="HTML training certificate" />
+            </div>
+            <div class="certificate-card-body">
+              <span class="certificate-card-badge">HTML</span>
+              <h3>HTML Training Certificate</h3>
+              <p class="certificate-card-meta">Spoken Tutorial • 2024</p>
+              <p>Completed a structured HTML training program focused on semantic markup, responsive layouts, and modern web structure.</p>
+            </div>
+          </article>
+
+          <article class="certificate-card-item reveal">
+            <div class="certificate-card-media">
+              <img src="images/cert-css.png" alt="CSS training certificate" />
+            </div>
+            <div class="certificate-card-body">
+              <span class="certificate-card-badge">CSS</span>
+              <h3>CSS Training Certificate</h3>
+              <p class="certificate-card-meta">Spoken Tutorial • 2024</p>
+              <p>Completed a CSS training course covering responsive styling, animation techniques, and polished UI design principles.</p>
+            </div>
+          </article>
+
+          <article class="certificate-card-item reveal">
+            <div class="certificate-card-media">
+              <img src="images/cert-python.png" alt="Python training certificate" />
+            </div>
+            <div class="certificate-card-body">
+              <span class="certificate-card-badge">Python</span>
+              <h3>Python Training Certificate</h3>
+              <p class="certificate-card-meta">Spoken Tutorial • 2025</p>
+              <p>Completed training in Python fundamentals, scripting, and problem-solving approaches useful for backend development.</p>
+            </div>
+          </article>
+
+          <article class="certificate-card-item reveal">
+            <div class="certificate-card-media">
+              <img src="images/cert-nm-1.png" alt="National merit certificate" />
+            </div>
+            <div class="certificate-card-body">
+              <span class="certificate-card-badge">Merit</span>
+              <h3>National Merit Certificate</h3>
+              <p class="certificate-card-meta">NM Program • 2026</p>
+              <p>Earned recognition for completing advanced skill development training with strong dedication and performance.</p>
+            </div>
+          </article>
+
+          <article class="certificate-card-item reveal">
+            <div class="certificate-card-media">
+              <img src="images/cert-nm-2.png" alt="Digital skills certificate" />
+            </div>
+            <div class="certificate-card-body">
+              <span class="certificate-card-badge">Digital Skills</span>
+              <h3>Digital Skills Achievement</h3>
+              <p class="certificate-card-meta">NM Program • 2026</p>
+              <p>Completed a digital skills program focused on practical technology use, productivity, and modern learning tools.</p>
+            </div>
+          </article>
+
+          <article class="certificate-card-item reveal">
+            <div class="certificate-card-media">
+              <img src="images/cert-nm-3.png" alt="English essentials certificate" />
+            </div>
+            <div class="certificate-card-body">
+              <span class="certificate-card-badge">Communication</span>
+              <h3>English Essentials Certificate</h3>
+              <p class="certificate-card-meta">NM Program • 2026</p>
+              <p>Completed training that strengthened communication skills, confidence, and effective expression in professional settings.</p>
+            </div>
+          </article>
+
+          <article class="certificate-card-item reveal">
+            <div class="certificate-card-media">
+              <img src="images/cert-nm.png" alt="Computer networking certificate" />
+            </div>
+            <div class="certificate-card-body">
+              <span class="certificate-card-badge">Networking</span>
+              <h3>Computer Networking Certificate</h3>
+              <p class="certificate-card-meta">NM Program • 2026</p>
+              <p>Completed a networking-focused certificate covering LAN/WAN concepts, connectivity, and structured communication systems.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ================= STUDY JOURNEY SECTION ================= -->
+<section class="study-journey section alt-bg" id="study-journey">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="section-badge">03 — Study Journey</div>
+      <h2>Study Journey</h2>
+      <p>From a strong school foundation to focused diploma learning in computer science.</p>
+    </div>
+
+    <div class="journey-timeline">
+      <div class="journey-item reveal">
+        <div class="journey-marker">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <div class="journey-card">
+          <span class="journey-year">2013 – 2021</span>
+          <h3>Middle School Education</h3>
+          <h4>Dhanapaul Middle School, Madurai</h4>
+          <p>Built a strong academic base and developed discipline, communication, and problem-solving habits that supported my later learning.</p>
+        </div>
+      </div>
+
+      <div class="journey-item reveal">
+        <div class="journey-marker">
+          <i class="fas fa-school"></i>
+        </div>
+        <div class="journey-card">
+          <span class="journey-year">2021 – 2023</span>
+          <h3>Higher Secondary Education</h3>
+          <h4>Dhanapaul Higher Secondary School, Madurai</h4>
+          <p>Completed my school studies with a growing interest in science and technology, which inspired me to pursue computer science.</p>
+        </div>
+      </div>
+
+      <div class="journey-item reveal">
+        <div class="journey-marker">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <div class="journey-card">
+          <span class="journey-year">2023 – 2026</span>
+          <h3>Diploma in Computer Science & Engineering</h3>
+          <h4>Tamil Nadu Government Polytechnic College, Madurai</h4>
+          <p>Currently learning programming, web development, databases, networking, and software engineering through practical projects using HTML, CSS, JavaScript, PHP, MySQL, Python, and Java.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="puzzle-game" class="alt-bg puzzle-section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="section-badge">06 — Interactive</div>
+          <h2>Play & Explore</h2>
+          <p>Challenge yourself with interactive games</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- Memory Puzzle Game -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="game-card-3d">
+              <h3 class="game-title-3d">Memory Match</h3>
+              <div class="d-flex justify-content-between mb-3 px-2" style="font-size:13px; color:var(--muted);">
+                <div>Score: <span id="gameScore" style="color:var(--cyan); font-weight:700;">0</span></div>
+                <div>Moves: <span id="gameMoves" style="color:var(--pink); font-weight:700;">0</span></div>
+              </div>
+              <div class="puzzle-board-small" id="puzzleBoard"></div>
+              <button id="resetPuzzleBtn" class="btn-primary-glow"
+                style="padding:10px 16px; font-size:12px; margin-top:auto; width:100%; justify-content:center;">
+                <i class="fas fa-redo"></i> New Game
+              </button>
+              <div id="gameMessage"
+                style="text-align:center; min-height:20px; font-size:12px; margin-top:10px; color:var(--green); font-weight:700;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Number Guessing Game -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="game-card-3d">
+              <h3 class="game-title-3d">Guess the Number</h3>
+              <div class="guess-game-container"
+                style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+                <p id="guessHint"
+                  style="color:var(--muted); font-size:13px; text-align:center; min-height:40px; margin-bottom:12px;">
+                  Guess a number between 1 and 100</p>
+                <input type="number" id="guessInput" class="guess-input" placeholder="Enter your guess..." min="1"
+                  max="100">
+                <button id="guessBtn" class="btn-primary-glow"
+                  style="padding:12px 20px; font-size:13px; width:100%; margin-top:12px; justify-content:center;">
+                  Check Guess
+                </button>
+                <div class="d-flex justify-content-between mt-3 px-2" style="font-size:13px; color:var(--muted);">
+                  <div>Attempts: <span id="guessAttempts" style="color:var(--pink); font-weight:700;">0</span></div>
+                  <div>Best: <span id="guessBest" style="color:var(--green); font-weight:700;">∞</span></div>
+                </div>
+                <button id="resetGuessBtn" class="btn-outline-glow"
+                  style="padding:10px 16px; font-size:12px; width:100%; margin-top:auto; justify-content:center;">
+                  <i class="fas fa-redo"></i> New Round
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tic-Tac-Toe Game (AI Opponent) -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="game-card-3d">
+              <h3 class="game-title-3d">Tic-Tac-Toe vs AI</h3>
+              <p id="tttStatus" style="color:var(--muted); font-size:13px; text-align:center; margin-bottom:8px;">Your
+                turn (X)</p>
+              <div class="game-board-ttt" id="tttBoard">
+                <div class="ttt-cell" data-index="0"></div>
+                <div class="ttt-cell" data-index="1"></div>
+                <div class="ttt-cell" data-index="2"></div>
+                <div class="ttt-cell" data-index="3"></div>
+                <div class="ttt-cell" data-index="4"></div>
+                <div class="ttt-cell" data-index="5"></div>
+                <div class="ttt-cell" data-index="6"></div>
+                <div class="ttt-cell" data-index="7"></div>
+                <div class="ttt-cell" data-index="8"></div>
+              </div>
+              <button id="resetTttBtn" class="btn-outline-glow"
+                style="padding:10px 16px; font-size:12px; width:100%; margin-top:auto; justify-content:center;">
+                <i class="fas fa-redo"></i> Reset Board
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="section-badge">07 — Terminal</div>
+          <h2>Contact</h2>
+          <p>Drop a message to initiate immediate background transmission</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5 reveal-left">
+            <div class="contact-info-card">
+              <div class="contact-row">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h5>Email</h5>
+                  <p><a href="mailto:compmanikandanb23@gmail.com">compmanikandanb23@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <h5>Secure Line</h5>
+                  <p><a href="tel:+917094964875">+91 7094964875</a></p>
+                </div>
+              </div>
+              <div class="contact-row">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <h5>Location Matrix</h5>
+                  <p>Madurai, Tamil Nadu, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 reveal-right">
+            <div class="contact-info-card">
+              <form class="cf" id="hireForm" action="https://formspree.io/f/xoqzpeow" method="POST">
+                <div class="cf-row">
+                  <input type="text" id="name" name="name" placeholder="Identification Name" required />
+                  <input type="tel" id="phone" name="phone" placeholder="Contact Mobile" required />
+                </div>
+                <input type="email" id="email" name="email" placeholder="Return Email Address" required />
+                <textarea id="message" name="message" rows="4" placeholder="Type your core query context here..."
+                  required></textarea>
+                <button type="submit" class="btn-primary-glow" style="width:100%; justify-content:center;">
+                  <i class="fas fa-paper-plane"></i> Transmit Packet
+                </button>
+                <p id="formStatus"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Crafted with <span>❤️</span> by <span>Manikandan B</span> &nbsp;|&nbsp; © 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Confetti Celebration Canvas -->
+  <canvas id="confettiCanvas"
+    style="position:fixed; inset:0; pointer-events:none; z-index:999999; display:none;"></canvas>
+
+  <!-- Floating Chatbot Trigger Button -->
+  <button id="chatToggle" class="chat-trigger-btn" type="button" aria-label="Open AI assistant">
+    <i class="fas fa-robot"></i>
+  </button>
+
+  <!-- AI CHATBOT WIDGET (floating) -->
+  <div id="aiChatWidget" class="ai-chat-widget">
+    <div class="chat-header" id="chatHeader">
+      <div class="chat-header-content">
+        <i class="fas fa-robot" style="color:var(--cyan); animation: robotBounce 2s infinite alternate;"></i>
+        <span style="font-weight:600;font-size:14px;">AI Assistant</span>
+        <span
+          style="font-size:10px;background:var(--green);color:#06040d;padding:2px 8px;border-radius:12px; font-weight:700;">online</span>
+      </div>
+      <button class="chat-toggle-btn" id="chatCloseBtn" type="button" aria-label="Close AI assistant"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-messages" id="chatMessages">
+        <div class="msg bot"><span>👋 Hello! I'm Mani's AI. Ask me about his skills, projects, or education.</span>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Ask me anything..." />
+        <button id="chatSendBtn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
